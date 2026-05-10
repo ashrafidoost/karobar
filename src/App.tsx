@@ -28,6 +28,22 @@ function App() {
         >
           Count is {count}
         </button>
+
+        <div>
+          <h1>Day 4 React/TS Learning</h1>
+          <div id="root">
+            <div>
+              <h2>Welcome to React and TypeScript Learning</h2>
+              <p>
+                This is a simple HTML file to test our React and TypeScript
+                setup.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>© 2024 React/TS Learning. All rights reserved.</p>
+          </div>
+        </div>
       </section>
 
       <div className="ticks"></div>

@@ -5,9 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Day 4 React/TS Learning</title>
   </head>
-  <body></body>
-</html>
 
-<script lang="javascript">
-  alert("Hello World");
-</script>
+  <body>
+    <h1>Day 4 React/TS Learning</h1>
+    <div id="root">
+        <div class="container">
+            <h2>Welcome to React and TypeScript Learning</h2>
+            <p>This is a simple HTML file to test our React and TypeScript setup.</p>
+        </div>
+        <div class="footer">
+            <p>© 2026 React/TS Learning. All rights reserved.</p>
+        </div>
+
+        <button onclick="lstner()" id="submit-btn">Click Me</button>
+
+        <button id="submit-btn">Button 01</button>
+        <button id="submit-btn">Button 02</button>
+        <button id="submit-btn">Button 03</button>
+
+  </body>
+    <script lang="javascript">
+        function greet() {
+            alert("Hello World");
+        }
+
+        function lstner() {
+            const submitButton = document.querySelectorAll('#submit-btn');
+
+            console.log(submitButton);
+
+            submitButton[2].addEventListener('click', (event) => {
+                event.preventDefault();
+                console.log('Submit button was clicked!', event.target);
+                event.target.style.backgroundColor = 'red';
+                event.target.textContent = 'Processing....';
+            });
+        }
+    </script>
+</html>
