@@ -25,21 +25,44 @@
 
   </body>
     <script lang="javascript">
+
+        console.log('1. Start');
+
+        setTimeout(() => {
+            console.log('2. This runs after 2 seconds');
+        }, 2000);
+
+        console.log('3. End');
+
         function greet() {
             alert("Hello World");
         }
 
         function lstner() {
-            const submitButton = document.querySelectorAll('#submit-btn');
 
-            console.log(submitButton);
+            const inputFld = document.getElementById('messageInput');
+            const theBtn = document.getElementById('sendBtn');
+            const chatWin = document.getElementById('chatWindow');
 
-            submitButton[2].addEventListener('click', (event) => {
-                event.preventDefault();
-                console.log('Submit button was clicked!', event.target);
-                event.target.style.backgroundColor = 'red';
-                event.target.textContent = 'Processing....';
-            });
+            theBtn.addEventListener('click', (event) => {
+                if(inputFld.value.trim()===""){
+                return;   // Do Nothing
+                }else{
+                const newParagraph = document.createElement('p');
+                newParagraph.textContent = inputFld.value.trim();
+                chatWin.appendChild(newParagraph);
+                inputFld.value = ''
+                }
+});
+
         }
     </script>
+
+    <div id="chat-app">
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button id="sendBtn" onclick="lstner()">Send</button>
+    <div id="chatWindow"></div>
+    </div>
+
+
 </html>
