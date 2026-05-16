@@ -4,6 +4,41 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 
+function checkString(str: string): string {
+  interface storeStaff {
+    id: number;
+    fname: string;
+    lname: string;
+    age: number;
+    role?: string; // Optional property
+  }
+
+  const staff1: storeStaff = {
+    id: 1,
+    fname: "Reza",
+    lname: "Ash",
+    age: 40,
+  };
+
+  const staff2: storeStaff = {
+    id: 2,
+    fname: "Laila",
+    lname: "Khan",
+  };
+
+  type myStaff = {
+    id: number;
+    fname: string;
+    lname: string;
+  };
+
+  if (str === null) {
+    return "Input element not found.";
+  } else {
+    return `the output is:  ${str.toUpperCase()}`;
+  }
+}
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -15,12 +50,7 @@ function App() {
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
-        <div>
-          <h1>Reza's Learning App</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
+
         <button
           type="button"
           className="counter"
@@ -30,7 +60,7 @@ function App() {
         </button>
 
         <div>
-          <h1>Day 4 React/TS Learning</h1>
+          <h3>Day 4 React/TS Learning</h3>
           <div id="root">
             <div>
               <h2>Welcome to React and TypeScript Learning</h2>
@@ -38,6 +68,20 @@ function App() {
                 This is a simple HTML file to test our React and TypeScript
                 setup.
               </p>
+              <input
+                type="text"
+                id="inputString"
+                placeholder="Enter a string..."
+              />
+              <button
+                onClick={() =>
+                  console.log(
+                    checkString(document.getElementById("inputString").value),
+                  )
+                }
+              >
+                Check String
+              </button>
             </div>
           </div>
           <div>
