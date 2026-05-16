@@ -70,7 +70,7 @@
           deleteButton.textContent = "Del";
           deleteButton.className = "delBtn";
           deleteButton.addEventListener("click", () => {
-            taskList.removeChild(newTask);
+            console.log(newTask);
           });
 
           tasks.push({
@@ -87,8 +87,8 @@
         }
       }
 
-      deleteTask = (index) => {
-        tasks.splice(index, 1);
+      deleteTask = (taskId) => {
+        tasks = tasks.filter((task) => task.id !== taskId);
         renderTasks();
       };
 
@@ -96,14 +96,16 @@
         const currentTasks = [];
 
         tasks.forEach((element) => {
-          currentTasks.push(element.text);
+          currentTasks.push([element.text, element.id]);
         });
 
         document.getElementById("taskList").innerHTML = currentTasks
           .map(
-            (task) => `<li class="taskItem">${task} 
-            <button class="delBtn" onclick="deleteTask(${tasks.indexOf(task)})">Del</button>
-            </li>`,
+            (task) => `<li class="taskItem">
+                    <span onclick="this.className = this.className === 'taskItem' ? 'completed' : 'taskItem';">
+                        ${task[0]}</span> 
+                    <button class="delBtn" onclick="deleteTask(${task[1]})">Del</button>
+                </li>`,
           )
           .join("");
       }
