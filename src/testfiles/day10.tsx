@@ -1,6 +1,32 @@
 import "../App.css";
+import { add, subtract, multiply, PI } from "./mathUtils";
+
+class BankAccount {
+  constructor(
+    public accountHolder: string,
+    private balance: number,
+  ) {}
+
+  public deposit(amount: number): void {
+    this.balance = add(this.balance, amount);
+  }
+
+  public withdraw(amount: number): void {
+    if (amount > this.balance) {
+      alert("Insufficient funds");
+      return;
+    }
+    this.balance -= amount;
+  }
+
+  public getBalance(): number {
+    return this.balance;
+  }
+}
 
 function MyFunc() {
+  const myAccount = new BankAccount("Reza Ash", 5000);
+
   return (
     <>
       <section id="center">
@@ -8,22 +34,42 @@ function MyFunc() {
           <h3>Day 10 React/TS Learning</h3>
           <div id="root">
             <div>
-              <h2>Welcome to React and TypeScript Learning</h2>
-              <p>
-                This is a simple HTML file to test our React and TypeScript
-                setup.
-              </p>
               <input
                 type="text"
                 id="inputString"
                 placeholder="Enter a string..."
               />
+
               <button
                 onClick={() =>
-                  console.log("The Day 10 React/TS Learning is successful!")
+                  myAccount.deposit(
+                    document.getElementById("inputString")?.value
+                      ? parseInt(document.getElementById("inputString")!.value)
+                      : 0,
+                  )
                 }
               >
-                Check String
+                Deposit
+              </button>
+
+              <button
+                onClick={() =>
+                  myAccount.withdraw(
+                    document.getElementById("inputString")?.value
+                      ? parseInt(document.getElementById("inputString")!.value)
+                      : 0,
+                  )
+                }
+              >
+                Withdraw
+              </button>
+
+              <button
+                onClick={() =>
+                  console.log(myAccount.accountHolder, myAccount.getBalance())
+                }
+              >
+                Show Account
               </button>
             </div>
           </div>

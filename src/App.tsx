@@ -28,7 +28,6 @@ function App() {
       </section>
 
       <section id="myFuncSection">
-        <h1>The Day 10 Practice</h1>
         <MyFunc />
       </section>
 
