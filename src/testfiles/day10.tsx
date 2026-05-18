@@ -1,5 +1,5 @@
 import "../App.css";
-import { add, subtract, multiply, PI } from "./mathUtils";
+import { add, checkOut, checkIntersection, checkGeneric } from "./mathUtils";
 
 class BankAccount {
   constructor(
@@ -24,7 +24,25 @@ class BankAccount {
   }
 }
 
-function MyFunc() {
+function handleCheckOut(inp: string) {
+  const result = checkOut(inp);
+  const resultElement = document.getElementById("checkOutResult");
+  if (resultElement) {
+    resultElement.textContent = result;
+  } else {
+    console.error("Element with id 'checkOutResult' not found.");
+  }
+}
+
+function checkGen() {
+  const firstNumber = checkGeneric<number>([1, 2, 3]);
+  const firstString = checkGeneric<string>(["Hi", "Who", "Are", "You"]);
+
+  console.log("First Number:", firstNumber);
+  console.log("First String:", firstString);
+}
+
+function DayTen() {
   const myAccount = new BankAccount("Reza Ash", 5000);
 
   return (
@@ -33,6 +51,25 @@ function MyFunc() {
         <div>
           <h3>Day 10 React/TS Learning</h3>
           <div id="root">
+            <div>
+              <h4>Intersection Example : {checkIntersection()}</h4>
+              <button onClick={checkGen} style={{ backgroundColor: "#ff7b00" }}>
+                Check Generic
+              </button>
+            </div>
+
+            <div>
+              <input
+                type="text"
+                id="inputForCheckOut"
+                placeholder="Enter anything to check..."
+                onKeyDown={(event) => {
+                  handleCheckOut((event.target as HTMLInputElement).value);
+                }}
+              />
+              <p id="checkOutResult"></p>
+            </div>
+
             <div>
               <input
                 type="text"
@@ -68,6 +105,7 @@ function MyFunc() {
                 onClick={() =>
                   console.log(myAccount.accountHolder, myAccount.getBalance())
                 }
+                style={{ backgroundColor: "#ff7b00" }}
               >
                 Show Account
               </button>
@@ -85,4 +123,4 @@ function MyFunc() {
   );
 }
 
-export default MyFunc;
+export default DayTen;
