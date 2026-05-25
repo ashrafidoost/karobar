@@ -5,6 +5,9 @@ import heroImg from "./assets/hero.png";
 import "./App.css";
 
 import MyFunc from "./testfiles/day10";
+import MyDay1400 from "./testfiles/day14";
+import MyDay15 from "./testfiles/day15";
+import MyDay17 from "./testfiles/day17";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,6 +28,18 @@ function App() {
         >
           Count is {count}
         </button>
+      </section>
+
+      <section id="myDay17">
+        <MyDay17 />
+      </section>
+
+      <section id="myDay15">
+        <MyDay15 />
+      </section>
+
+      <section id="myDay14">
+        <MyDay1400 />
       </section>
 
       <section id="myFuncSection">
