@@ -8,6 +8,7 @@ import MyFunc from "./testfiles/day10";
 import MyDay1400 from "./testfiles/day14";
 import MyDay15 from "./testfiles/day15";
 import MyDay17 from "./testfiles/day17";
+import { UserDirectory, UserCard } from "./testfiles/day20";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +29,10 @@ function App() {
         >
           Count is {count}
         </button>
+      </section>
+
+      <section id="myDay20">
+        <UserDirectory />
       </section>
 
       <section id="myDay17">
