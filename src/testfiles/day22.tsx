@@ -13,6 +13,8 @@ export function Day22() {
   );
 }
 
+// Using useContext / useRef / useState together in a component to demonstrate their usage and differences
+
 function Header() {
   const themeContext = useContext(ThemeContext);
 
