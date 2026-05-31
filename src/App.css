@@ -17,6 +17,10 @@
   }
 }
 
+.secFrame {
+  padding: 100px;
+}
+
 .hero {
   position: relative;
 
