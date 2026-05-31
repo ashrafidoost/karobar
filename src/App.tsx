@@ -11,6 +11,7 @@ import MyDay17 from "./testfiles/day17";
 import { UserDirectory, UserCard } from "./testfiles/day20";
 import { Day22 } from "./testfiles/day22";
 import { Day24 } from "./testfiles/day24";
+import { Day25 } from "./testfiles/day25";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,6 +32,10 @@ function App() {
         >
           Count is {count}
         </button>
+      </section>
+
+      <section id="myDay25" className="secFrame">
+        <Day25 />
       </section>
 
       <section id="myDay24" className="secFrame">
