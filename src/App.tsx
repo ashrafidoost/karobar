@@ -12,6 +12,7 @@ import { UserDirectory, UserCard } from "./testfiles/day20";
 import { Day22 } from "./testfiles/day22";
 import { Day24 } from "./testfiles/day24";
 import { Day25 } from "./testfiles/day25";
+import { Day26 } from "./testfiles/day26";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,15 +36,16 @@ function App() {
       </section>
 
       <section id="myDay25" className="secFrame">
+        <Day26 />
+      </section>
+
+      {/*
+      <section id="myDay25" className="secFrame">
         <Day25 />
       </section>
 
       <section id="myDay24" className="secFrame">
         <Day24 />
-      </section>
-
-      <section id="myDay22">
-        <Day22 />
       </section>
 
       <section id="myDay20">
@@ -65,6 +67,7 @@ function App() {
       <section id="myFuncSection">
         <MyFunc />
       </section>
+      */}
 
       <div className="ticks"></div>
       <section id="spacer"></section>
