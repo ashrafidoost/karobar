@@ -12,7 +12,6 @@ import React, {useState, useContext} from "react";
 
  expost const ThemeProvider: ({children}:ThemeProviderProps) => {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
     const toggleTheme = () => { 
         setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));   
  } ;
