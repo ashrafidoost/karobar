@@ -13,6 +13,7 @@ import { Day22 } from "./testfiles/day22";
 import { Day24 } from "./testfiles/day24";
 import { Day25 } from "./testfiles/day25";
 import { Day26 } from "./testfiles/day26";
+import { Day29 } from "./testfiles/day29";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,7 +37,7 @@ function App() {
       </section>
 
       <section id="myDay25" className="secFrame">
-        <Day26 />
+        <Day29 />
       </section>
 
       {/*
