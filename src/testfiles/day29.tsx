@@ -1,4 +1,3 @@
-import React, { useState, createContext, useContext } from "react";
 import { Button, Container, Typography, Box } from "@mui/material";
 
 interface WelcomeHeroProps {
@@ -28,8 +27,9 @@ function WelcomeHero({ title, onActionClick }: WelcomeHeroProps) {
 
         {/* Components come with strict, type-safe variant selections */}
 
-<Button variant="" color="primary">Click Me</Button>
-
+        <Button variant="" color="primary">
+          Click Me
+        </Button>
 
         <Button
           variant="contained"
