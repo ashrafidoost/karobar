@@ -14,6 +14,10 @@ import { Day24 } from "./testfiles/day24";
 import { Day25 } from "./testfiles/day25";
 import { Day26 } from "./testfiles/day26";
 import { Day29 } from "./testfiles/day29";
+//--------------- Learning React Book Review - Jul 15 -> Jul 31 --------------------
+import Mylrn01 from "./testfiles/LRN_Book/mylrn01";
+
+//----------------------------------------------------------------------------------
 
 function App() {
   const [count, setCount] = useState(0);
@@ -34,6 +38,10 @@ function App() {
         >
           Count is {count}
         </button>
+      </section>
+
+      <section id="mylrn01" className="secFrame">
+        <Mylrn01 />
       </section>
 
       <section id="myDay25" className="secFrame">

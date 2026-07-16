@@ -10,7 +10,8 @@ import React, {useState, useContext} from "react";
     children: React.ReactNode;
  }
 
- expost const ThemeProvider: ({children}:ThemeProviderProps) => {
+ 
+ export const ThemeProvider: ({children}:ThemeProviderProps) => {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');
     const toggleTheme = () => { 
         setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));   
