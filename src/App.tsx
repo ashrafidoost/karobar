@@ -3,21 +3,9 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
-
-import MyFunc from "./testfiles/day10";
-import MyDay1400 from "./testfiles/day14";
-import MyDay15 from "./testfiles/day15";
-import MyDay17 from "./testfiles/day17";
-import { UserDirectory, UserCard } from "./testfiles/day20";
-import { Day22 } from "./testfiles/day22";
-import { Day24 } from "./testfiles/day24";
-import { Day25 } from "./testfiles/day25";
-import { Day26 } from "./testfiles/day26";
 import { Day29 } from "./testfiles/day29";
-//--------------- Learning React Book Review - Jul 15 -> Jul 31 --------------------
 import Mylrn01 from "./testfiles/LRN_Book/mylrn01";
-
-//----------------------------------------------------------------------------------
+import Welcome from "./testfiles/LRN_Book/mylrn02";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -40,43 +28,14 @@ function App() {
         </button>
       </section>
 
-      <section id="mylrn01" className="secFrame">
+      <section id="mylrn" className="secFrame">
+        <Welcome name="Reza" />
         <Mylrn01 />
       </section>
 
       <section id="myDay25" className="secFrame">
         <Day29 />
       </section>
-
-      {/*
-      <section id="myDay25" className="secFrame">
-        <Day25 />
-      </section>
-
-      <section id="myDay24" className="secFrame">
-        <Day24 />
-      </section>
-
-      <section id="myDay20">
-        <UserDirectory />
-      </section>
-
-      <section id="myDay17">
-        <MyDay17 />
-      </section>
-
-      <section id="myDay15">
-        <MyDay15 />
-      </section>
-
-      <section id="myDay14">
-        <MyDay1400 />
-      </section>
-
-      <section id="myFuncSection">
-        <MyFunc />
-      </section>
-      */}
 
       <div className="ticks"></div>
       <section id="spacer"></section>

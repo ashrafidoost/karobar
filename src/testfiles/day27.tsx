@@ -1,13 +1,17 @@
-import React, { usestate, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-interface User {
-  userId: number;
-}
+export default function DayTwentySeven() {
+  const [value, setValue] = useState("");
 
-function Myfunc() {
+  useEffect(() => {
+    document.title = "Day 27";
+  }, []);
+
   return (
     <div>
-      <h1>Myfunc Component</h1>
+      <h1>Day 27 Component</h1>
+      <input value={value} onChange={(event) => setValue(event.target.value)} />
+      <p>Current value: {value}</p>
     </div>
   );
 }

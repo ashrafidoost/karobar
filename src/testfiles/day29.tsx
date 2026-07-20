@@ -27,7 +27,7 @@ function WelcomeHero({ title, onActionClick }: WelcomeHeroProps) {
 
         {/* Components come with strict, type-safe variant selections */}
 
-        <Button variant="" color="primary">
+        <Button variant="contained" color="primary">
           Click Me
         </Button>
 

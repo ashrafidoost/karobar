@@ -1,6 +1,11 @@
 import "../App.css";
 
-function UserCard({ username, age }) {
+interface UserCardProps {
+  username: string;
+  age: string | number;
+}
+
+function UserCard({ username, age }: UserCardProps) {
   return (
     <div>
       <h3>

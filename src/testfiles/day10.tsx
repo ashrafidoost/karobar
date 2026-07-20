@@ -2,10 +2,13 @@ import "../App.css";
 import { add, checkOut, checkIntersection, checkGeneric } from "./mathUtils";
 
 class BankAccount {
-  constructor(
-    public accountHolder: string,
-    private balance: number,
-  ) {}
+  public accountHolder: string;
+  private balance: number;
+
+  constructor(accountHolder: string, balance: number) {
+    this.accountHolder = accountHolder;
+    this.balance = balance;
+  }
 
   public deposit(amount: number): void {
     this.balance = add(this.balance, amount);
@@ -78,25 +81,21 @@ function DayTen() {
               />
 
               <button
-                onClick={() =>
-                  myAccount.deposit(
-                    document.getElementById("inputString")?.value
-                      ? parseInt(document.getElementById("inputString")!.value)
-                      : 0,
-                  )
-                }
+                onClick={() => {
+                  const input = document.getElementById("inputString") as HTMLInputElement | null;
+                  const amount = Number(input?.value ?? 0);
+                  myAccount.deposit(amount);
+                }}
               >
                 Deposit
               </button>
 
               <button
-                onClick={() =>
-                  myAccount.withdraw(
-                    document.getElementById("inputString")?.value
-                      ? parseInt(document.getElementById("inputString")!.value)
-                      : 0,
-                  )
-                }
+                onClick={() => {
+                  const input = document.getElementById("inputString") as HTMLInputElement | null;
+                  const amount = Number(input?.value ?? 0);
+                  myAccount.withdraw(amount);
+                }}
               >
                 Withdraw
               </button>

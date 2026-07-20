@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import "../App.css";
 
 function NameInput() {
-  const [name, setName] = useState(0);
+  const [name, setName] = useState("");
 
-  function handleTyping(
-    e: string | number | React.ChangeEvent<HTMLInputElement>,
-  ) {
+  function handleTyping(e: ChangeEvent<HTMLInputElement>) {
     setName(e.target.value);
   }
 

@@ -1,6 +1,6 @@
-import React, { useState, createContext, useContext, useRef } from "react";
+import { useState, createContext, useContext, useRef } from "react";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext("light");
 
 export function Day22() {
   return (
@@ -47,10 +47,10 @@ function SilnetCounter() {
 }
 
 function FocusInput() {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   function handleFocus() {
-    inputRef.current.focus();
+    inputRef.current?.focus();
   }
 
   return (

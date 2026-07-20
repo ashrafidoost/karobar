@@ -1,14 +1,25 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+interface UserCardProps {
+  name: string;
+  email: string;
+}
 
 export function UserDirectory() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((data) => {
+      .then((data: User[]) => {
         setUsers(data);
         setLoading(false);
       })
@@ -43,7 +54,7 @@ export function UserDirectory() {
   );
 }
 
-export function UserCard({ name, email }) {
+export function UserCard({ name, email }: UserCardProps) {
   return (
     <div className="user-card">
       <h3>{name}</h3>
