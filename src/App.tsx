@@ -6,6 +6,8 @@ import "./App.css";
 import { Day29 } from "./testfiles/day29";
 import Mylrn01 from "./testfiles/LRN_Book/mylrn01";
 import Welcome from "./testfiles/LRN_Book/mylrn02";
+import MyLrn03 from "./testfiles/LRN_Book/mylrn03";
+import Mylrn03 from "./testfiles/LRN_Book/mylrn03";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,6 +28,11 @@ function App() {
         >
           Count is {count}
         </button>
+      </section>
+
+      <section id="mylrn" className="secFrame">
+        <Welcome name="Reza" />
+        <Mylrn03 />
       </section>
 
       <section id="mylrn" className="secFrame">
